@@ -2,13 +2,14 @@ import AcmeLogo from '@/app/ui/acme-logo';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import style from './ui/home.module.css'
-import { lusitana } from './ui/font';
+import Image from 'next/image';
+import { lusitana } from './ui/fonts';
 
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col p-6">
       <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
-        {/* <AcmeLogo /> */}
+        { <AcmeLogo /> }
         <div className={style.shape}></div>
       </div>
       <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
@@ -28,7 +29,18 @@ export default function Page() {
           </Link>
         </div>
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
-          <img src="./hero-desktop.png" alt="" />
+          <Image 
+            src="/hero-desktop.png" 
+            alt="Cactura de panatlla de la pagina"
+            width={1000}
+            height={760}
+            className='hidden md:block' />
+          <Image 
+            src="/hero-mobile.png" 
+            alt="Cactura de panatlla de la pagina"
+            width={560}
+            height={620}
+            className='block md:hidden' />
         </div>
       </div>
     </main>
